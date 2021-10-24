@@ -12,6 +12,8 @@ const byte redPinRight = 3;
 const byte greenPinRight = 5;
 const byte bluePinRight = 6;
 
+const int buzPin = 2;
+
 // Parameters
 const int sensorPin = A0; // Pin connected to sensor
 
@@ -55,30 +57,7 @@ void loop()
   sensorVal < 200 ? displayColor(255, 0, 0) : displayColor(0, 0, 0);
 
   delay(DELAY);
-
-  /*
-  displayColor(255, 0, 0);
-  delay(1000);
-
-  displayColor(0, 255, 0);
-  delay(1000);
-
-  displayColor(0, 0, 255);
-  delay(1000);
-
-  displayColor(255, 0, 255);
-  delay(1000);
-
-  displayColor(0, 255, 255);
-  delay(1000);
-
-  displayColor(255, 255, 0);
-  delay(1000);
-
-  displayColor(255, 255, 255);
-  delay(1000);
-
-  displayColor(0, 0, 0);
-  delay(1000);
-  */
 }
+
+// Varier entre 70 et 75 pour le son
+// tone(buzPin, 70, 200);
