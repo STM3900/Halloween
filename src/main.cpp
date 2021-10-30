@@ -1,9 +1,6 @@
 #include <Arduino.h>
 
-// Constants
-#define DELAY 500 // Delay between two measurements in ms
-
-/* Broches */
+/* Déclaration des pins */
 const byte redPinLeft = 9;
 const byte greenPinLeft = 10;
 const byte bluePinLeft = 11;
@@ -12,18 +9,16 @@ const byte redPinRight = 3;
 const byte greenPinRight = 5;
 const byte bluePinRight = 6;
 
+// sert à stocker la valeur de la couleur des LEDS
 byte oldRedPinRight;
 byte oldGreenPinRight;
 byte oldBluePinRight;
 
-const int buzPin = 2;
-
-// Parameters
-const int sensorPin = A0; // Pin connected to sensor
+const int buzPin = 2;     // Buzzer
+const int sensorPin = A0; //Capteur de luminosité
 
 //Variables
 int sensorVal; // Analog value from the sensor
-int lux;       //Lux value
 
 /** Affiche une couleur */
 void displayColor(byte r, byte g, byte b)
@@ -124,8 +119,6 @@ void whiteWoke(int duration)
 
 void ledAnimation()
 {
-  Serial.println("Début");
-
   delay(10000);
   transitionRedLight(100, 4000);
   delay(5000);
